@@ -1,12 +1,12 @@
-package com.example.github_training_project;
+package com.example.github_training_project.recipebook.activities;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+
+import com.example.github_training_project.databinding.ActivityForgotPasswordBinding;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class ForgotPasswordActivity extends AppCompatActivity {
     ActivityForgotPasswordBinding binding;
