@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "256611292768",
+    "project_id": "githubtrainingproject",
+    "storage_bucket": "githubtrainingproject.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:256611292768:android:e2edde40d82d84a04ed505",
+        "android_client_info": {
+          "package_name": "com.example.github_training_project"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMd-dm_IQGC56X1UcSI58l6C4qu1tHnQ0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
