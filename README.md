@@ -32,7 +32,7 @@ Recipe Book is a modern Android application that helps users discover, share, an
 
 | Welcome | Login | Home |
 |---------|-------|------|
-| ![Welcome](screenshots/welcome.png) | ![Login](screenshots/login.png) | ![Home](screenshots/home.png) |
+| ![Welcome]([screenshots/welcome.png](https://github.com/shahedeyadalmobayed2004/github-training-project/blob/main/screenshots/welcome.png.png)) | ![Login]([screenshots/login.png](https://github.com/shahedeyadalmobayed2004/github-training-project/blob/main/screenshots/login.png.png)) | ![Home]([screenshots/home.png](https://github.com/shahedeyadalmobayed2004/github-training-project/blob/main/screenshots/home.png.png)) |
 
 ## 🚀 Getting Started
 
