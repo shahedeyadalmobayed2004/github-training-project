@@ -20,6 +20,7 @@ import android.view.ViewGroup;
 import com.example.github_training_project.databinding.FragmentRecipeBinding;
 import com.example.github_training_project.recipebook.activities.RecipeDetailsActivity;
 import com.example.github_training_project.recipebook.adapters.RecipeAdapter;
+import com.example.github_training_project.recipebook.adapters.ShimmerAdapter;
 import com.example.github_training_project.recipebook.models.RecipeModel;
 import com.example.github_training_project.recipebook.utils.RecipeBookListener;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -80,8 +81,7 @@ public class RecipeFragment extends Fragment implements RecipeBookListener {
 
         adapter = new RecipeAdapter(filteredList, this);
         binding.recyclerView.setAdapter(adapter);
-
-
+        binding.recyclerView.setAdapter(new ShimmerAdapter());
 
         loadRecipes();
         binding.swipeRefresh.setOnRefreshListener(() -> {
@@ -135,6 +135,7 @@ public class RecipeFragment extends Fragment implements RecipeBookListener {
 
     private void loadRecipes() {
         binding.swipeRefresh.setRefreshing(true);
+        binding.recyclerView.setAdapter(new ShimmerAdapter());
 
 
         firestore.collection("recipes")
