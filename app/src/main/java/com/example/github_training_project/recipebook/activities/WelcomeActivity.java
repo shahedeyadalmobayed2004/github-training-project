@@ -25,7 +25,7 @@ public class WelcomeActivity extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         boolean remembered = sharedPreferences.contains("email") && sharedPreferences.contains("password");
         if ( remembered) {
-//            startActivity(new Intent(this, HomeActivity.class));a
+            startActivity(new Intent(this, HomeActivity.class));
             finish();
             return;
         }
