@@ -46,7 +46,7 @@ public class LoginActivity extends AppCompatActivity {
         String savedPassword = sharedPreferences.getString("password", "");
 
         if (!savedEmail.isEmpty() && !savedPassword.isEmpty()) {
-//            startActivity(new Intent(LoginActivity.this,HomeActivity.class));
+            startActivity(new Intent(LoginActivity.this,HomeActivity.class));
             finish();
         }
 
@@ -77,7 +77,7 @@ public class LoginActivity extends AppCompatActivity {
                                 }
 
                                 Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
-//                                startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+                                startActivity(new Intent(LoginActivity.this, HomeActivity.class));
                                 finish();
                             }
                             else {
