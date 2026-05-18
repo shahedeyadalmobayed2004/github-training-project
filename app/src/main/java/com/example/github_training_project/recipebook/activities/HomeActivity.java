@@ -60,8 +60,8 @@ public class HomeActivity extends AppCompatActivity {
         loadCategoriesFromFirestore();
 
         binding.addRecipeFab.setOnClickListener(v -> {
-          //  Intent intent = new Intent(this, AddRecipeActivity.class);
-         //   launcher.launch(intent);
+            Intent intent = new Intent(this, AddRecipeActivity.class);
+            launcher.launch(intent);
         });
 
         binding.toolbar.setOnMenuItemClickListener(item -> {
