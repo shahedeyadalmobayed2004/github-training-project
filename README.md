@@ -8,6 +8,9 @@
 
 Recipe Book is a modern Android application that helps users discover, share, and organize their favorite recipes. Built with Material Design principles and modern Android technologies.
 
+## 👤 Developed By
+ **Student Name:** Shahed Eyad Al Mobayed
+
 ### ✨ Features
 
 - 🔐 **Authentication** - Secure login/register with Firebase
@@ -28,6 +31,7 @@ Recipe Book is a modern Android application that helps users discover, share, an
 - **Picasso** - Image loading
 - **ViewPager2** - Swipeable tabs
 
+
 ## 📸 Screenshots
 
 | Welcome | Login | Home |
@@ -42,12 +46,9 @@ Recipe Book is a modern Android application that helps users discover, share, an
 - JDK 11+
 - Firebase Account (free)
 - Cloudinary Account (free)
-
+   
 ### Installation
 
 1. Clone the repository
 ```bash
 git clone https://github.com/YOUR_USERNAME/recipe-book-app.git
-
-## 👤 Developed By
-- **Student Name:** Shahed Eyad Al Mobayed
