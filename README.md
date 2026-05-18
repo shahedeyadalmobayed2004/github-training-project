@@ -48,3 +48,6 @@ Recipe Book is a modern Android application that helps users discover, share, an
 1. Clone the repository
 ```bash
 git clone https://github.com/YOUR_USERNAME/recipe-book-app.git
+
+## 👤 Developed By
+- **Student Name:** Shahed Eyad Al Mobayed
