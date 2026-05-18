@@ -66,7 +66,7 @@ public class HomeActivity extends AppCompatActivity {
 
         binding.toolbar.setOnMenuItemClickListener(item -> {
             if (item.getItemId() == R.id.profile) {
-       //         startActivity(new Intent(this, ProfileActivity.class));
+               startActivity(new Intent(this, ProfileActivity.class));
                 return true;
             }
             return false;
