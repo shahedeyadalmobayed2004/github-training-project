@@ -18,6 +18,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.github_training_project.databinding.FragmentRecipeBinding;
+import com.example.github_training_project.recipebook.activities.RecipeDetailsActivity;
 import com.example.github_training_project.recipebook.adapters.RecipeAdapter;
 import com.example.github_training_project.recipebook.models.RecipeModel;
 import com.example.github_training_project.recipebook.utils.RecipeBookListener;
@@ -127,9 +128,9 @@ public class RecipeFragment extends Fragment implements RecipeBookListener {
 
     @Override
     public void onRecipeClick(RecipeModel recipe) {
-//        Intent intent = new Intent(requireContext(), RecipeDetailsActivity.class);
-//        intent.putExtra("recipeId", recipe.getId());
-//        launcher.launch(intent);
+       Intent intent = new Intent(requireContext(), RecipeDetailsActivity.class);
+       intent.putExtra("recipeId", recipe.getId());
+        launcher.launch(intent);
     }
 
     private void loadRecipes() {
