@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Recipe Book - Share Your Culinary Journey</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #FFF3DF 0%, #FFE8CC 100%);
+            color: #2C1810;
+            line-height: 1.6;
+        }
+
+        /* Navigation Bar - Responsive */
+        .navbar {
+            background: #E67E22;
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            font-size: 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        /* Mobile menu button - responsive */
+        .menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 6rem 2rem 4rem;
+            background: linear-gradient(135deg, #E67E22 0%, #F39C12 100%);
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: white;
+            color: #E67E22;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: fadeInUp 0.8s ease 0.4s both;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            margin-left: 1rem;
+        }
+
+        /* Features Section - Responsive Cards */
+        .features {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #E67E22;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 30px rgba(0,0,0,0.15);
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .card h3 {
+            color: #E67E22;
+            margin-bottom: 1rem;
+        }
+
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 25px;
+        padding: 20px;
+        justify-content: center;
+    }
+
+  .gallery-item {
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover {
+        transform: translateY(-5px);
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: auto;
+        max-height: 450px; 
+        object-fit: contain;
+        background-color: #fcf8f2;
+        padding: 10px 10px 0 10px;
+    }
+
+    
+    .gallery-item p {
+        padding: 15px;
+        margin: 0;
+        font-weight: bold;
+        color: #333;
+        font-size: 1rem;
+        text-align: center;
+        width: 100%;
+        border-top: 1px solid #eee;
+        background: #fff;
+    }
+
+        /* Download Section */
+        .download {
+            text-align: center;
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, #2C1810 0%, #4A2C1A 100%);
+            color: white;
+        }
+
+        .qr-code {
+            width: 200px;
+            height: 200px;
+            background: white;
+            margin: 2rem auto;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        /* Footer - Responsive */
+        .footer {
+            background: #1a0f0a;
+            color: #999;
+            padding: 3rem 2rem 1rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h4 {
+            color: #E67E22;
+            margin-bottom: 1rem;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid #333;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design - Media Queries */
+        @media (max-width: 768px) {
+            .menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                text-align: center;
+                padding: 1rem 0;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .btn {
+                display: block;
+                margin: 0.5rem auto;
+            }
+
+            .btn-secondary {
+                margin-left: auto;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar {
+                padding: 0.8rem 1rem;
+            }
+
+            .logo {
+                font-size: 1.3rem;
+            }
+
+            .hero {
+                padding: 5rem 1rem 3rem;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <span>🍽️</span> Recipe Book
+            </a>
+            <button class="menu-btn" onclick="toggleMenu()">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#screenshots">Screenshots</a></li>
+                <li><a href="#download">Download</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>🍳 Share Your Culinary Journey</h1>
+            <p>Discover, cook, and share amazing recipes from around the world. Your personal recipe book, always with you.</p>
+            <a href="#download" class="btn">Download App</a>
+            <a href="#features" class="btn btn-secondary">Learn More</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <h2 class="section-title">✨ Amazing Features</h2>
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-icon">🔐</div>
+                <h3>Secure Authentication</h3>
+                <p>Login safely with Firebase Authentication. Your recipes are private and secure.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">📸</div>
+                <h3>Image Upload</h3>
+                <p>Upload beautiful photos of your dishes using Cloudinary integration.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🔍</div>
+                <h3>Smart Search</h3>
+                <p>Find recipes by title or category instantly with real-time search.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">📝</div>
+                <h3>CRUD Operations</h3>
+                <p>Create, read, update, and delete your recipes effortlessly.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">👤</div>
+                <h3>User Profile</h3>
+                <p>Personal profile showing all your uploaded recipes in one place.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🎥</div>
+                <h3>Video Tutorials</h3>
+                <p>Attach YouTube links to your recipes for step-by-step guidance.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshots Section -->
+    <section id="screenshots" class="screenshots">
+        <h2 class="section-title">📱 App Screenshots</h2>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="screenshots/welcome.png" alt="Welcome Screen" onerror="this.src='https://via.placeholder.com/300x200?text=Welcome+Screen'">
+                <p>Welcome Screen</p>
+            </div>
+            <div class="gallery-item">
+                <img src="screenshots/login.png" alt="Login Screen" onerror="this.src='https://via.placeholder.com/300x200?text=Login+Screen'">
+                <p>Login Screen</p>
+            </div>
+            <div class="gallery-item">
+                <img src="screenshots/home.png" alt="Home Screen" onerror="this.src='https://via.placeholder.com/300x200?text=Home+Screen'">
+                <p>Home Screen</p>
+            </div>
+            <div class="gallery-item">
+                <img src="screenshots/recipe_details.png" alt="Recipe Details" onerror="this.src='https://via.placeholder.com/300x200?text=Recipe+Details'">
+                <p>Recipe Details</p>
+            </div>
+            <div class="gallery-item">
+                <img src="screenshots/add_recipe.png" alt="Add Recipe" onerror="this.src='https://via.placeholder.com/300x200?text=Add+Recipe'">
+                <p>Add Recipe</p>
+            </div>
+            <div class="gallery-item">
+                <img src="screenshots/profile.png" alt="User Profile" onerror="this.src='https://via.placeholder.com/300x200?text=Profile'">
+                <p>User Profile</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="download">
+        <h2>📲 Get the App</h2>
+        <p>Available for Android devices</p>
+        <div class="qr-code">
+            📱
+        </div>
+<a href="recipe-book.apk" class="btn" style="background: white; color: #E67E22;" download>Download APK</a>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">Version 1.0.0 | Requires Android 6.0+</p>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Recipe Book</h4>
+                <p>Your ultimate companion for discovering and sharing delicious recipes from around the world.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul style="list-style: none;">
+                    <li><a href="#home" style="color: #999; text-decoration: none;">Home</a></li>
+                    <li><a href="#features" style="color: #999; text-decoration: none;">Features</a></li>
+                    <li><a href="#screenshots" style="color: #999; text-decoration: none;">Screenshots</a></li>
+                    <li><a href="#download" style="color: #999; text-decoration: none;">Download</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Technologies</h4>
+                <ul style="list-style: none;">
+                    <li>Java / Android</li>
+                    <li>Firebase Auth & Firestore</li>
+                    <li>Cloudinary</li>
+                    <li>Material Design</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Student Info</h4>
+                <p><strong>Name:</strong>Shahed Eyad Al Mobayed</p>
+                <p><strong>Course:</strong> Mobile Development</p>
+                <p><strong>GitHub:</strong> <a href="https://github.com/shahedeyadalmobayed2004" target="_blank" style="color: inherit; text-decoration: none;">@shahedeyadalmobayed2004</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Recipe Book App. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                    // Close mobile menu if open
+                    document.getElementById('navLinks').classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
